@@ -5,28 +5,31 @@ const { NotImplementedError } = require('../extensions/index.js');
  * 
  */
 const chainMaker = {
-  getLength() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
-  },
-  addLink(/* value */) {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
-  },
-  removeLink(/* position */) {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
-  },
-  reverseChain() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
-  },
-  finishChain() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
-  }
+	pepega: [],
+	getLength() {
+		return this.pepega.length
+	},
+	addLink(val) {
+		this.pepega.push(`( ${String(val)} )`)
+		return this
+
+	},
+	removeLink(pos) {
+		this.pepega.splice(pos - 1, 1)
+		return this
+	},
+	reverseChain() {
+		this.pepega.reverse()
+		return this
+	},
+	finishChain() {
+		let arr = this.pepega
+		this.pepega = []
+		return (arr.join('~~'))
+
+	}
 };
 
 module.exports = {
-  chainMaker
+	chainMaker
 };
