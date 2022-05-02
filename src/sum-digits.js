@@ -12,11 +12,29 @@ const { NotImplementedError } = require('../extensions/index.js');
  * For 91, the result should be 1 (9 + 1 = 10, 1 + 0 = 1)
  *
  */
-function getSumOfDigits(/* n */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+function getSumOfDigits(number) {
+	let string = number
+	let result = 0
+
+	function pepegaSummoner(string) {
+		result = 0
+		for (let i = 0; i < String(string).length; i++) {
+			result += Number(String(string)[i])
+		}
+		return result
+	}
+	if (String(string).length > 1) {
+		pepegaSummoner(string)
+
+		if (String(result).length > 1) {
+			pepegaSummoner(result)
+		}
+		return result
+
+	}
+	return result
 }
 
 module.exports = {
-  getSumOfDigits
+	getSumOfDigits
 };
